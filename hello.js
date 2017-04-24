@@ -1,6 +1,18 @@
+// INICIALIZACIÓN DE SERVIDOR PRIMER TEST
+/*
 var http = require("http");
 http.createServer(function(request,response){
 	response.writeHead(200,{"Content-Type":"text/plain"});
 	response.end('Hello World!\n');
 }).listen(8082);
 console.log("Server runing at port 8082");
+*/
+// INICIALIZACIÓN DE SERIDOR CON EXPRESS.JS
+var express = require('express');
+var app = express();
+app.get('/', function (req, res) {
+  res.send('Hello World!\n');
+});
+app.listen(8082, function () {
+  console.log('Example app listening on port 8082!');
+});
