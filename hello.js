@@ -7,11 +7,17 @@ http.createServer(function(request,response){
 }).listen(8082);
 console.log("Server runing at port 8082");
 */
-// INICIALIZACIÓN DE SERIDOR CON EXPRESS.JS
+// INICIALIZACIÓN DE SERVIDOR CON EXPRESS.JS
 var express = require('express');
 var app = express();
+app.use(express.static('public'));
+/*
 app.get('/', function (req, res) {
   res.send('Hello World!\n');
+});
+*/
+app.use(function(req, res, next) {
+  res.status(404).send('Sorry cant find that!');
 });
 app.listen(8082, function () {
   console.log('Example app listening on port 8082!');
